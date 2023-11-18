@@ -2,7 +2,7 @@
 Tietokannat ja web-ohjelmointi course
 
 ### Teaching app
-My topic is an educational application from the example topics. The application provides online courses where mathematics are taught. The courses include text material and exercises. Each user is a teacher or a student.
+My topic is an educational application from the example topics. The application provides online courses that teach mathematics. The courses include text material and exercises. Each user is a teacher or a student.
 
 #### Features of the app:
 - The user can log in and out and register as a user.
