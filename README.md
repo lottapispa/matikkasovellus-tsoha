@@ -15,3 +15,5 @@ My topic is an educational application from the example topics. The application 
 
 ### Status of the app
 Structure of the app has been created. So far the pages are only in student's view. Appearance hasn't been paid attention to yet.
+
+### How to test
