@@ -1,14 +1,17 @@
-# Matikkasovellus
-Tietokannat ja web-ohjelmointi
+# Math app
+Tietokannat ja web-ohjelmointi course
 
-### Opetussovellus
-Aiheenani on opetussovellus esimerkkiaiheista. Sovellus järjestää verkkokursseja, jossa opetetaan alkeismatematiikkaa. Kursseihin sisältyy tekstimateriaalia ja automaattisesti tarkastettavia tehtäviä. Jokainen käyttäjä on opettaja tai opiskelija.
+### Teaching app
+My topic is an educational application from the example topics. The application provides online courses where mathematics are taught. The courses include text material and exercises. Each user is a teacher or a student.
 
-#### Sovelluksen ominaisuuksia:
-- Käyttäjä voi kirjautua sisään ja ulos sekä luoda uuden tunnuksen.
-- Opiskelija näkee listan kursseista ja voi liittyä kurssille.
-- Opiskelija voi lukea kurssin tekstimateriaalia sekä ratkoa kurssin tehtäviä.
-- Opiskelija pystyy näkemään tilaston, mitkä kurssin tehtävät hän on ratkonut.
-- Opettaja pystyy luomaan uuden kurssin, muuttamaan olemassa olevaa kurssia ja poistamaan kurssin.
-- Opettaja pystyy lisäämään kurssille tekstimateriaalia ja tehtäviä. Tehtävä voi olla ainakin monivalinta tai tekstikenttä, johon tulee kirjoittaa oikea vastaus.
-- Opettaja pystyy näkemään kurssistaan tilaston, keitä opiskelijoita on kurssilla ja mitkä kurssin tehtävät kukin on ratkonut.
+#### Features of the app:
+- The user can log in and out and register as a user.
+- The student can see a list of courses and can join courses.
+- The student can read the text material of the course and solve the course exercises.
+- The student can see the statistics of which course assignments he has solved.
+- The teacher can create a new course, change existing courses and delete a course.
+- The teacher can add text material and exercises to the course. The task can be at least multiple choice or a text field where you have to write the correct answer.
+- The teacher can see the statistics of his course, which students are in the course and which course exercises each has solved.
+
+### Status of the app
+Structure of the app has been created. So far the pages are only in student's view. Appearance hasn't been paid attention to yet.
