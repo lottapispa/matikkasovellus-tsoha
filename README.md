@@ -17,13 +17,4 @@ My topic is an educational application from the example topics. The application 
 Structure of the app has been created. So far the pages are only in student's view. Appearance hasn't been paid attention to yet.
 
 ### How to test
-Clone this repository on to your computer and go into it's root directory ```matikkasovellus-tsoha```. Create an ```.env``` file in the directory and put this text in there:  
-DATABASE_URL=<database's local path>  
-SECRET_KEY=<salainen-avain>  
-Next activate the virtual environment and install the app's dependencies with these commands:  
-```python3 -m venv venv```  
-```source venv/bin/activate```  
-```pip install -r ./requirements.txt```  
-Then define the database's schema with this command:  
-```psql < schema.sql```  
-You can run the app with the command ```flask run``` and get out of the environment with the command ```deactivate```.
+[Test at fly.io](https://fly.io/apps/matikkasovellus-tsoha)
