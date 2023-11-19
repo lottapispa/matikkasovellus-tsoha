@@ -26,7 +26,6 @@ def elementary_math():
 def addition():
     return render_template("addition.html")
 
-
 @app.route("/el-math-statistics")
 def statistics():
     return render_template("el-math-statistics.html")
