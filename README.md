@@ -14,7 +14,10 @@ My topic is an educational application from the example topics. The application 
 - The teacher can see the statistics of his course, which students are in the course and which course exercises each has solved.
 
 ### Status of the app
-Structure of the app has been created. So far the pages are only in student's view. Appearance hasn't been paid attention to yet.
+Structure of the app has been created. So far the pages are only in student's view. Appearance hasn't been paid attention to yet. Databases are not in use yet.
+
+### Questions
+It seems that my fly.toml file wasn't configured correctly so I also couldn't deploy it. Is there any way to reconfigure it?
 
 ### How to test
 Testing at fly.io is not possible yet.  
@@ -26,7 +29,3 @@ Next activate the virtual environment and install the app's dependencies with th
 ```source venv/bin/activate```  
 
 Now you can run the app with the command ```flask run```
-
-
-
-
