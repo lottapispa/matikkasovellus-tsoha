@@ -21,8 +21,9 @@ Clone this repository on to your computer and go into it's root directory ```mat
 DATABASE_URL=<tietokannan-paikallinen-osoite>
 SECRET_KEY=<salainen-avain>
 Next activate the virtual environment and install the app's dependencies with these commands:
-```
-python3 -m venv venv
-source venv/bin/activate
-pip install -r ./requirements.txt
-```
+```python3 -m venv venv```
+```source venv/bin/activate```
+```pip install -r ./requirements.txt```
+Then define the database's schema with this command:
+```psql < schema.sql```
+You can run the app with the command ```flask run``` and get out of the environment with the command ```deactivate```.
