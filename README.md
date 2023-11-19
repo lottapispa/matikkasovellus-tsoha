@@ -18,9 +18,10 @@ Structure of the app has been created. So far the pages are only in student's vi
 
 ### How to test
 Testing at fly.io is not possible yet.  
+
 Clone this repository to your computer and go into it's root directory. Create an ```.env```file there and put these in there:  
-DATABASE_URL=<the-database's local address>  
-SECRET_KEY=<the-secret-key>  
+```DATABASE_URL=<the-database's local address>```  
+```SECRET_KEY=<the-secret-key>```  
 
 Next activate the virtual environment and install the app's dependencies with the commands:  
 ```python3 -m venv venv```  
