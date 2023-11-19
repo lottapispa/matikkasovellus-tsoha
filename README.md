@@ -18,7 +18,7 @@ Structure of the app has been created. So far the pages are only in student's vi
 
 ### How to test
 Clone this repository on to your computer and go into it's root directory ```matikkasovellus-tsoha```. Create an ```.env``` file in the directory and put this text in there:
-DATABASE_URL=<tietokannan-paikallinen-osoite>
+DATABASE_URL=<database's local path>
 SECRET_KEY=<salainen-avain>
 Next activate the virtual environment and install the app's dependencies with these commands:
 ```python3 -m venv venv```
