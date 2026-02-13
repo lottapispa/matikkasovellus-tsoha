@@ -14,15 +14,17 @@ My topic is an educational application from the example topics. The application 
 - The teacher can see the statistics of his course, which students are in the course and which course exercises each has solved.
 
 ### Status of the app
-Structure of the app has been created. So far the pages are only in student's view. Appearance hasn't been paid attention to yet. Databases are not in use yet.
+Structure of the app, the database, and register & login functions have been created. I haven't paid attention to the appearance yet.
 
 ### How to test
-Testing at fly.io is not possible yet.  
+Clone this repository to your computer and go into its root directory.  
 
-Clone this repository to your computer and go into it's root directory. 
-
-Next activate the virtual environment and install the app's dependencies with the commands:  
-```python3 -m venv venv```  
+Create virtual environment:  
+```python3 -m venv venv```
+Activate the virtual environment:    
 ```source venv/bin/activate```  
+Install the app's dependencies with the commands:  
+```pip install flask```  
 
 Now you can run the app with the command ```flask run```
+
