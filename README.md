@@ -20,11 +20,12 @@ Structure of the app, the database, and register & login functions have been cre
 Clone this repository to your computer and go into its root directory.  
 
 Create virtual environment:  
-```python3 -m venv venv```
+```python3 -m venv venv```  
 Activate the virtual environment:    
 ```source venv/bin/activate```  
 Install the app's dependencies with the commands:  
 ```pip install flask```  
 
 Now you can run the app with the command ```flask run```
+
 
