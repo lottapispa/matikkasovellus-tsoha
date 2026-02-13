@@ -1,14 +1,16 @@
-from flask import Flask
-from flask import render_template, request
-from flask_sqlalchemy import SQLAlchemy
+from flask import Flask, session
+from flask import redirect, render_template, request
+import sqlite3
+import config
+from werkzeug.security import generate_password_hash, check_password_hash
+import db
 
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql:///lottapispa"
-db = SQLAlchemy(app)
+app.secret_key = config.secret_key
 
 @app.route("/")
-def login():
-    return render_template("login.html")
+def index():
+    return render_template("index.html")
 
 @app.route("/frontpage", methods=["POST"])
 def front_page():
@@ -16,12 +18,43 @@ def front_page():
 
 @app.route("/register")
 def register():
-    add_new_user()
     return render_template("register.html")
 
+@app.route("/create", methods=["POST"])
+def create():
+    username = request.form["username"]
+    password1 = request.form["password1"]
+    password2 = request.form["password2"]
+    if password1 != password2:
+        return "ERROR: the passwords don't match"
+    password_hash = generate_password_hash(password1)
+
+    try:
+        sql = "INSERT INTO users (username, password_hash) VALUES (?, ?)"
+        db.execute(sql, [username, password_hash])
+    except sqlite3.IntegrityError:
+        return "ERROR: username is taken"
+
+    return "User created"
+
 @app.route("/login", methods=["POST"])
-def login_after_register():
-    return render_template("login.html", name=request.form["name"])
+def login():
+    username = request.form["username"]
+    password = request.form["password"]
+    
+    sql = "SELECT password_hash FROM users WHERE username = ?"
+    password_hash = db.query(sql, [username])[0][0]
+
+    if check_password_hash(password_hash, password):
+        session["username"] = username
+        return redirect("/")
+    else:
+        return "ERROR: wrong username or password"
+
+@app.route("/logout")
+def logout():
+    del session["username"]
+    return redirect("/")
 
 @app.route("/elementary-math")
 def elementary_math():
@@ -34,11 +67,3 @@ def addition():
 @app.route("/el-math-statistics")
 def statistics():
     return render_template("el-math-statistics.html")
-
-def add_new_user():
-    user_type = request.form["who"]
-    username = request.form["name"]
-    password = request.form["password"]
-    sql = "INSERT INTO Users (username, password, user_type) VALUES (:username, :password, :user_type)"
-    db.session.execute(sql, {"username": username, "password": password, "user_type": user_type})
-    db.session.commit()
