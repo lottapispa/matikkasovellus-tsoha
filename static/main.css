@@ -1,0 +1,55 @@
+body {
+    margin: auto;
+    width: auto;
+    font-family: Georgia, serif;
+    background-color: lightcyan;
+    font-size: 20;
+    color: black;
+    text-align: center;
+    align-items: center;
+}
+
+.header {
+    padding: 20px;
+}
+
+h1 {
+    font-size: 50;
+}
+
+h2 {
+    font-size: 30;
+}
+
+h3 {
+    font-size: 20;
+    font-weight: bold;
+}
+
+nav {
+    background-color: white;
+    padding: 10px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+form {
+    display: block;
+    width: 40;
+    margin: auto;
+    padding: 10px;
+}
+
+.button {
+    background-color: white; 
+    border: 1px solid black; 
+    text-align: center;
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+    width: 20%;
+    margin: auto;
+    text-align: left;
+}
