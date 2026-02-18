@@ -12,16 +12,13 @@ app.secret_key = config.secret_key
 def index():
     return render_template("index.html")
 
-@app.route("/frontpage", methods=["POST"])
-def front_page():
-    return render_template("frontpage.html", name=request.form["name"])
-
 @app.route("/register")
 def register():
     return render_template("register.html")
 
 @app.route("/create", methods=["POST"])
 def create():
+    user_type = request.form["type"]
     username = request.form["username"]
     password1 = request.form["password1"]
     password2 = request.form["password2"]
@@ -30,14 +27,15 @@ def create():
     password_hash = generate_password_hash(password1)
 
     try:
-        sql = "INSERT INTO users (username, password_hash) VALUES (?, ?)"
-        db.execute(sql, [username, password_hash])
+        sql = "INSERT INTO users (username, password_hash, user_type) VALUES (?, ?, ?)"
+        db.execute(sql, [username, password_hash, user_type])
     except sqlite3.IntegrityError:
         return "ERROR: username is taken"
 
-    return "User created"
+    # Figure out how to send a "User created" message and then return to index.
+    return redirect("/")
 
-@app.route("/login", methods=["POST"])
+@app.route("/login", methods=["GET", "POST"])
 def login():
     username = request.form["username"]
     password = request.form["password"]
@@ -47,14 +45,18 @@ def login():
 
     if check_password_hash(password_hash, password):
         session["username"] = username
-        return redirect("/")
+        return redirect("/frontpage")
     else:
         return "ERROR: wrong username or password"
 
-@app.route("/logout")
+@app.route("/logout", methods=["GET", "POST"])
 def logout():
     del session["username"]
     return redirect("/")
+
+@app.route("/frontpage", methods=["GET", "POST"])
+def front_page():
+    return render_template("frontpage.html")
 
 @app.route("/elementary-math")
 def elementary_math():
